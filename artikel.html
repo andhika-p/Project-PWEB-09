@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Tour nde' Jatim</title>
+	<link href="artikel.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$(".burger").click(function () {
+				$(".menu").toggle();
+			});
+		});
+		function bukaartikel() {
+			loadContent();
+            document.getElementById('artikellama').innerHTML
+                +=
+    		'<div class="polaroid1">' + 
+				'<img src="image/kawah_ijen.jpg" alt="kawahijen" style="width:100%">' + 
+				'<div class="container">' + '<a id="art">' + 'KAWAH' + '</a>' + '</div>'+
+			'</div>';
+        }
+		function loadContent() {
+            var xhr = new XMLHttpRequest();
+            var url = "artikel.php";
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("art").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", url, true);
+            xhr.send();
+        }
+	</script>
+
+</head>
+
+<body>
+	<div class="header">
+		<div class="header1">
+			<div class="logo">
+				<p><b>Tour nde' Jatim</b></p>
+				<div class="burger">
+					<div class="slice"></div>
+					<div class="slice"></div>
+					<div class="slice"></div>
+				</div>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="index.html"><span>Beranda</span></a></li>
+					<li class="active"><a href="artikel.html"><span>Artikel</span></a></li class="active">
+					<li><a href="openTrip.html"><span>Open Trip</span></a></li>
+					<li><a href="contact.html"><span>Contact Us</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<h1 class="destinasi">ARTIKEL</h1>
+
+	<div class="tanggal">
+			<ul>
+				<li><a href="">Jan 2019</a></li>
+				<li><a href="">Feb 2019</a></li>
+				<li><a href="">Mar 2019</a></li>
+				<a href="artikel1.html" class="skip"> > </a>
+			</ul>
+	</div>
+		<div class="garis"><strong><hr /></strong></div>
+	
+		<div class="gambar" id="artikellama">
+			<div class="polaroid1">
+				<img src="image/kawah_ijen.jpg" alt="Kawah Ijen" style="width:100%; height: auto;">
+				<div class="container"><a href="openTrip1.html"> Kawah Ijen </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/baluran.jpg" alt="Baluran" style="width:100%">
+				<div class="container"><a> Baluran </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/bromo.jpg" alt="Bromo" style="width:100%">
+				<div class="container"><a> Bromo </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/watu_ulo.jpg" alt="WatuUlo" style="width:100%">
+				<div class="container"><a> Watu Ulo </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/kawah_ijen.jpg" alt="kawahijen" style="width:100%">
+				<div class="container"><a> Kawah Ijen </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/bromo.jpg" alt="Bromo" style="width:100%">
+				<div class="container"><a> Bromo </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/watu_ulo.jpg" alt="WatuUlo" style="width:100%">
+				<div class="container"><a> Watu Ulo </a></div>
+			</div>
+			<div class="polaroid1">
+				<img src="image/kawah_ijen.jpg" alt="kawahijen" style="width:100%">
+				<div class="container"><a> Kawah Ijen </a></div>
+			</div>
+		</div>
+		<button onclick="bukaartikel()">BUKA ARTIKEL</button>
+
+<div class="footer">
+	<p>Copyright @ TourNde'Jatim 2019</p>
+</div>
+
+</body>
+
+</html>
